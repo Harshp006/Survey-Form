@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AarogyaConnect Survey</title>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.22);
+      --glass-border: rgba(255, 255, 255, 0.35);
+      --primary: #3b82f6;
+      --text-light: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .glass-card {
+      width: 100%;
+      max-width: 560px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .header h1 {
+      color: var(--text-light);
+      margin: 10px 0 6px;
+    }
+
+    .header p {
+      color: #cbd5f5;
+      font-size: 0.95rem;
+    }
+
+    .question {
+      margin-bottom: 16px;
+    }
+
+    .question label {
+      display: flex;
+      gap: 8px;
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: none;
+      background: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 12px;
+      padding: 13px;
+      border-radius: 14px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .success {
+      display: none;
+      margin-top: 14px;
+      text-align: center;
+      font-weight: 600;
+      color: #bbf7d0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="glass-card">
+  <div class="header">
+    <i data-lucide="heart-pulse" style="color:#93c5fd; width:34px;"></i>
+    <h1>AarogyaConnect Survey</h1>
+    <p>Your responses will help improve access to free medical and health camps</p>
+  </div>
+
+  <!-- ✅ CORS-PROOF FORM -->
+  <form
+    id="surveyForm"
+    action="https://script.google.com/macros/s/AKfycbzLHsd1xQOSuUwzxQUFZq22DVJGf1OQ2EdiOWewjYhJ0eSiDwHX_MrqrxHy7HPsIwWL/exec"
+    method="POST"
+    target="hidden_iframe"
+  >
+
+    <div class="question">
+      <label><i data-lucide="ear"></i>
+        Have you heard about any free medical or health camps conducted in your area?
+      </label>
+      <select name="heardAbout" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label><i data-lucide="users"></i>
+        Have you or anyone in your family ever visited a medical or health camp?
+      </label>
+      <select name="visitedCamp" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label><i data-lucide="info"></i>
+        If yes, how did you get to know about the medical or health camp?
+      </label>
+      <select name="source" required>
+        <option value="">Select</option>
+        <option>Friends or Relatives</option>
+        <option>NGO</option>
+        <option>Hospital or Clinic</option>
+        <option>Posters or Banners</option>
+        <option>Social Media</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label><i data-lucide="alert-circle"></i>
+        What is the biggest problem you face while attending such medical camps?
+      </label>
+      <select name="problem" required>
+        <option value="">Select</option>
+        <option>Long distance from home</option>
+        <option>Lack of proper information</option>
+        <option>Long waiting time</option>
+        <option>Work or time constraints</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label><i data-lucide="stethoscope"></i>
+        What kind of health camp would be most useful for you and your family?
+      </label>
+      <select name="usefulCamp" required>
+        <option value="">Select</option>
+        <option>General health check-up</option>
+        <option>Eye care</option>
+        <option>Dental care</option>
+        <option>Women’s health</option>
+        <option>Child health</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label><i data-lucide="smartphone"></i>
+        If there was a simple website or mobile page showing nearby medical camps, would you use it?
+      </label>
+      <select name="useWebsite" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Maybe</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label><i data-lucide="rss"></i>
+        How do you usually get information related to health and medical services?
+      </label>
+      <select name="healthInfoSource" required>
+        <option value="">Select</option>
+        <option>Doctor</option>
+        <option>Family or Friends</option>
+        <option>WhatsApp</option>
+        <option>TV or Radio</option>
+        <option>Internet</option>
+      </select>
+    </div>
+
+    <button class="submit-btn" type="submit">Submit Survey</button>
+  </form>
+
+  <div class="success" id="successMsg">
+    ✅ Thank you! Your response has been recorded.
+  </div>
+</div>
+
+<!-- REQUIRED FOR FORM SUBMISSION -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  lucide.createIcons();
+
+  const form = document.getElementById("surveyForm");
+  const successMsg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", () => {
+    setTimeout(() => {
+      form.reset();
+      successMsg.style.display = "block";
+    }, 600);
+  });
+</script>
+
+</body>
+</html>
