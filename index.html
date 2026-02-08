@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AarogyaConnect Survey</title>
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
@@ -24,7 +23,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: linear-gradient(135deg, #dfa1ec,blue, #c7a0cb);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,11 +34,10 @@
       width: 100%;
       max-width: 560px;
       background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+      backdrop-filter: blur(30px);
+      border: 1.2px solid var(--glass-border);
+      border-radius: 30px;
+      padding: 30px;
     }
 
     .header {
@@ -53,8 +51,8 @@
     }
 
     .header p {
-      color: #cbd5f5;
-      font-size: 0.95rem;
+      color: #ffffff;
+      font-size: 1rem;
     }
 
     .question {
@@ -63,12 +61,10 @@
 
     .question label {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       color: var(--text-light);
       font-weight: 600;
-      font-size: 0.95rem;
       margin-bottom: 6px;
-      line-height: 1.3;
     }
 
     select {
@@ -76,19 +72,20 @@
       padding: 10px 12px;
       border-radius: 12px;
       border: none;
-      background: rgba(255,255,255,0.9);
-      font-size: 0.9rem;
+      opacity: 80%;
+      backdrop-filter: blur(20px);
+      background: rgb(255, 255, 255);
     }
 
     .submit-btn {
       width: 100%;
-      margin-top: 12px;
+      margin-top: 14px;
       padding: 13px;
       border-radius: 14px;
       border: none;
       background: var(--primary);
-      color: white;
-      font-weight: 600;
+      color: rgb(255, 255, 255);
+      font-weight: 700;
       cursor: pointer;
     }
 
@@ -96,8 +93,8 @@
       display: none;
       margin-top: 14px;
       text-align: center;
+      color: #01ff5a;
       font-weight: 600;
-      color: #bbf7d0;
     }
   </style>
 </head>
@@ -108,20 +105,15 @@
     <i data-lucide="heart-pulse" style="color:#93c5fd; width:34px;"></i>
     <h1>AarogyaConnect Survey</h1>
     <p>Your responses will help improve access to free medical and health camps</p>
+    <p>Thank you for coming till here, we appreciate it!</p>
   </div>
 
-  <!-- ✅ CORS-PROOF FORM -->
-  <form
-    id="surveyForm"
-    action="https://script.google.com/macros/s/AKfycbzLHsd1xQOSuUwzxQUFZq22DVJGf1OQ2EdiOWewjYhJ0eSiDwHX_MrqrxHy7HPsIwWL/exec"
-    method="POST"
-    target="hidden_iframe"
-  >
+  <form id="surveyForm">
+
+   
 
     <div class="question">
-      <label><i data-lucide="ear"></i>
-        Have you heard about any free medical or health camps conducted in your area?
-      </label>
+      <label><i data-lucide="ear"></i> Have you heard about free medical camps?</label>
       <select name="heardAbout" required>
         <option value="">Select</option>
         <option>Yes</option>
@@ -130,9 +122,7 @@
     </div>
 
     <div class="question">
-      <label><i data-lucide="users"></i>
-        Have you or anyone in your family ever visited a medical or health camp?
-      </label>
+      <label><i data-lucide="users"></i> Have you visited a medical camp?</label>
       <select name="visitedCamp" required>
         <option value="">Select</option>
         <option>Yes</option>
@@ -141,52 +131,44 @@
     </div>
 
     <div class="question">
-      <label><i data-lucide="info"></i>
-        If yes, how did you get to know about the medical or health camp?
-      </label>
+      <label><i data-lucide="info"></i> How did you get to know?</label>
       <select name="source" required>
         <option value="">Select</option>
         <option>Friends or Relatives</option>
         <option>NGO</option>
-        <option>Hospital or Clinic</option>
-        <option>Posters or Banners</option>
+        <option>Hospital</option>
+        <option>Posters</option>
         <option>Social Media</option>
-        <option>Other</option>
+        <option>Never attended</option>
       </select>
     </div>
 
     <div class="question">
-      <label><i data-lucide="alert-circle"></i>
-        What is the biggest problem you face while attending such medical camps?
-      </label>
+      <label><i data-lucide="alert-circle"></i> Biggest problem?</label>
       <select name="problem" required>
         <option value="">Select</option>
-        <option>Long distance from home</option>
-        <option>Lack of proper information</option>
-        <option>Long waiting time</option>
-        <option>Work or time constraints</option>
-        <option>Other</option>
+        <option>Distance</option>
+        <option>Lack of info</option>
+        <option>Waiting time</option>
+        <option>Work issues</option>
+        <option>Never attended</option>
       </select>
     </div>
 
     <div class="question">
-      <label><i data-lucide="stethoscope"></i>
-        What kind of health camp would be most useful for you and your family?
-      </label>
+      <label><i data-lucide="stethoscope"></i> Useful camp?</label>
       <select name="usefulCamp" required>
         <option value="">Select</option>
-        <option>General health check-up</option>
-        <option>Eye care</option>
-        <option>Dental care</option>
-        <option>Women’s health</option>
-        <option>Child health</option>
+        <option>General</option>
+        <option>Eye</option>
+        <option>Dental</option>
+        <option>Women</option>
+        <option>Child</option>
       </select>
     </div>
 
     <div class="question">
-      <label><i data-lucide="smartphone"></i>
-        If there was a simple website or mobile page showing nearby medical camps, would you use it?
-      </label>
+      <label><i data-lucide="smartphone"></i> Would you use a website?</label>
       <select name="useWebsite" required>
         <option value="">Select</option>
         <option>Yes</option>
@@ -196,29 +178,22 @@
     </div>
 
     <div class="question">
-      <label><i data-lucide="rss"></i>
-        How do you usually get information related to health and medical services?
-      </label>
+      <label><i data-lucide="rss"></i> Health info source?</label>
       <select name="healthInfoSource" required>
         <option value="">Select</option>
         <option>Doctor</option>
-        <option>Family or Friends</option>
+        <option>Family</option>
         <option>WhatsApp</option>
-        <option>TV or Radio</option>
+        <option>TV</option>
         <option>Internet</option>
       </select>
     </div>
 
-    <button class="submit-btn" type="submit">Submit Survey</button>
+    <button class="submit-btn">Submit Survey</button>
   </form>
 
-  <div class="success" id="successMsg">
-    ✅ Thank you! Your response has been recorded.
-  </div>
+  <div class="success" id="successMsg">✅ Response recorded. Please share this form to your friends/div>
 </div>
-
-<!-- REQUIRED FOR FORM SUBMISSION -->
-<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <script>
   lucide.createIcons();
@@ -226,11 +201,21 @@
   const form = document.getElementById("surveyForm");
   const successMsg = document.getElementById("successMsg");
 
-  form.addEventListener("submit", () => {
-    setTimeout(() => {
-      form.reset();
-      successMsg.style.display = "block";
-    }, 600);
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzWp7AyFFj6TAa0Cf9F6bpRq44kLm3U1GBNVJ2kx4XbmLJbWDPeRPJFD6DrhYVQyEiC/exec";
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: data,
+      mode: "no-cors"
+    });
+
+    form.reset();
+    successMsg.style.display = "block";
   });
 </script>
 
